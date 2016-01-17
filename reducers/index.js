@@ -18,6 +18,18 @@ const initRecipes = {
         "name": "Krossade tomater",
         "amount": 500,
         "unit": "gram"
+      },
+      {
+        "ingredientId": 5,
+        "name": "Spaghetti",
+        "amount": 500,
+        "unit": "gram"
+      },
+      {
+        "ingredientId": 6,
+        "name": "Salt",
+        "amount": 20,
+        "unit": "gram"
       }
       ],
       "cookingTime": 80
@@ -37,6 +49,12 @@ const initRecipes = {
         "name": "Smör",
         "amount": 114,
         "unit": "gram"
+      },
+      {
+        "ingredientId": 6,
+        "name": "Salt",
+        "amount": 20,
+        "unit": "gram"
       }
       ],
       "cookingTime": 45 
@@ -54,8 +72,23 @@ const initPlanner = {
     {
       "id": 2,
       "name": "Tuesday",
+      "recipeId": 2
+    },
+    {
+      "id": 3,
+      "name": "Wednesday",
       "recipeId": 1
-    }
+    },
+    {
+      "id": 4,
+      "name": "Thursday",
+      "recipeId": 2
+    },
+    {
+      "id": 5,
+      "name": "Friday",
+      "recipeId": 1
+    },
   ]
 };
 
@@ -78,7 +111,14 @@ const initIngredients = {
       "name": "Smör",
       "tags": ["dairy"]
     },
-
+    5: {
+      "name": "Spaghetti",
+      "tags": ["pasta"]
+    },
+    6: {
+      "name": "Salt",
+      "tags": ["spice"]
+    }
   }
 }
 

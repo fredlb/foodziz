@@ -17,6 +17,7 @@ class Recipes extends Component {
             </ul>
             </div>
         )}
+        {this.props.children}
         </div>
     );
   }
