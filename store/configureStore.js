@@ -11,7 +11,7 @@ const createStoreWithMiddleware = applyMiddleware(
 
 export default function configureStore(rootReducer) {
   const store = createStoreWithMiddleware(rootReducer);
-  reduxRouterMiddleware.syncHistoryToStore(store);
+  reduxRouterMiddleware.listenForReplays(store);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
