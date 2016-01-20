@@ -3,10 +3,14 @@
 }
 
 .menu {
-  flex-grow: 1
+  flex-grow: 1;
+  max-width: 360px;
+  height: 98vh;
+  background-color: #F7C47C;
 }
 
-.children {
-  flex-grow: 3 
+.content {
+  flex-grow: 6;
+  padding: 3em;
 }
 

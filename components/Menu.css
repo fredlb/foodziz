@@ -1,16 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Limelight);
+
 .appMenu {
   list-style: none;
+  padding: 3em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.appMenu li {
+  border: solid 1px #000;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+
 .appMenu li a{
-  font-family: 'Arial';
+  font-family: 'Limelight', cursive;
   text-decoration: none;
-  color: darkturquoise;
+  color: #000;
 }
 
 .appMenu li a:hover {
-  color: darkseagreen;
+  color: #B03805;
 }

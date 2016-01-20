@@ -9,7 +9,7 @@ class App extends Component {
     return (
         <div styleName="container">
           <nav styleName="menu"><Menu/></nav>
-          <div styleName="children">{children}</div>
+          <div styleName="content">{children}</div>
         </div>
     );
   }
