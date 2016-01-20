@@ -12,7 +12,7 @@ import Recipe from './components/Recipe';
 import Start from './components/Start';
 import configureStore from './store/configureStore';
 import reducers from './reducers';
-import css from './global.css';
+import './global.css';
 
 const reducer = combineReducers(Object.assign({}, reducers, {
   routing: routeReducer
