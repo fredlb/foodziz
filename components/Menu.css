@@ -1,22 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Limelight);
+@import url(https://fonts.googleapis.com/css?family=Exo:400,300);
 
 .appMenu {
   list-style: none;
-  padding: 3em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .appMenu li {
-  border: solid 1px #000;
-  padding: 1em;
-  margin: 1em;
-  text-align: center;
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 .appMenu li a{
-  font-family: 'Limelight', cursive;
+  font-family: 'Exo', sans-serif;
   text-decoration: none;
   color: #000;
 }

@@ -3,10 +3,10 @@
 }
 
 .menu {
-  flex-grow: 1;
-  max-width: 360px;
+  max-width: 15em;
+  min-width: 15em;
   height: 98vh;
-  background-color: #F7C47C;
+  background-color: #E0E0E0;
 }
 
 .content {
