@@ -5,7 +5,7 @@
   "author": "Fredrik Lindner <fredrik.lindner@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodejs server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "classnames": "^2.1.2",
