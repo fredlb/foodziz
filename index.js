@@ -9,6 +9,7 @@ import Recipes from './containers/Recipes';
 import ShoppingLists from './containers/ShoppingLists';
 import Planner from './containers/Planner';
 import Recipe from './components/Recipe';
+import Start from './components/Start';
 import configureStore from './store/configureStore';
 import reducers from './reducers';
 
@@ -23,6 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+        <Route path="start" component={Start}/>
         <Route path="recipes" component={Recipes}/>
         <Route path="recipe/:id" component={Recipe}/>
         <Route path="planner" component={Planner}/>

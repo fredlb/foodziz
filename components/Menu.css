@@ -1,0 +1,16 @@
+.appMenu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.appMenu li a{
+  font-family: 'Arial';
+  text-decoration: none;
+  color: darkturquoise;
+}
+
+.appMenu li a:hover {
+  color: darkseagreen;
+}
