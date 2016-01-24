@@ -1,24 +1,43 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import { fetchRecipes } from '../actions';
 
 class Recipes extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchRecipes());
+  }
+
   render() {
     const { recipes } = this.props;
+    var content;
+    if ( Object.is(recipes,[])) {
+      content = <div>Loading...</div>;
+    } else {
+      content = 
+        <ul>
+          {recipes.map((recipe) => (
+            <li>
+              <Link to={`recipe/${recipe.id}`}>
+                <p>{recipe.title}</p>
+              </Link>
+            </li>
+          ))
+          }
+       </ul>
+    }
+
     return (
-        <div>
-        {recipes.map((recipe) => 
-            <div key={recipe.id}>
-            <p>{recipe.title}</p>
-            <ul>
-            {recipe.ingredients.map((ing) => 
-                <li key={ing.ingredientId}>{ing.name} - {ing.amount}{ing.unit}</li>
-              )}
-            </ul>
-            </div>
-        )}
+      <div>
+        {content}
         {this.props.children}
-        </div>
+      </div>
     );
   }
 }
@@ -29,19 +48,12 @@ function mapStateToProps(state) {
   const recipesById = recipesIds.map((id) => 
     recipes[id]
   );
-  console.log(recipesById);
 
   return {
     recipes: recipesById
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-  };
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
 )(Recipes);

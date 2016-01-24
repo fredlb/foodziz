@@ -3,7 +3,7 @@ import * as Actions from '../actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import IngredientsList from '../components/IngredientsList;
+import IngredientsList from '../components/IngredientsList';
 
 class Recipe extends Component {
   componentWillReceiveProps(nextProps) {

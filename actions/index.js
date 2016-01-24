@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 export const CREATE_SHOPPINGLIST = "CREATE_SHOPPINGLIST";
+export const FETCH_RECIPE = "FETCH_RECIPE";
 
 export function createShoppingList() {
   return (dispatch, getState) => {
@@ -31,4 +32,31 @@ function test(ing) {
     type: CREATE_SHOPPINGLIST,
     ing
   }
+}
+
+export function fetchRecipe(id) {
+  return (dispatch, getState) => {
+    const state = getState();
+    const currentRecipe = state.recipes.recipes[id];
+    return dispatch(whatthehell(currentRecipe));
+  }
+}
+
+function whatthehell(recipe) {
+  return {
+    type: FETCH_RECIPE,
+    recipe
+  }
+}
+
+export function fetchRecipes() {
+  return (dispatch, getState) => {
+    const state = getState();
+    const recipes = state.recipes.recipes;
+    return dispatch(receiveRecipes(recipes));
+  }
+}
+
+function receiveRecipes(recipes) {
+  console.log(recipes);
 }

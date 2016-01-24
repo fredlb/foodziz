@@ -1,4 +1,4 @@
-import { CREATE_SHOPPINGLIST } from '../actions';
+import { CREATE_SHOPPINGLIST, FETCH_RECIPE } from '../actions';
 
 const initRecipes = {
   recipesIds: [1,2],
@@ -145,9 +145,19 @@ function shoppinglists(state = initShoppingList, action) {
   }
 }
 
+function currentRecipe(state = {}, action) {
+  switch(action.type) {
+    case FETCH_RECIPE:
+      return Object.assign({}, state, action.recipe);
+    default:
+      return state;
+  }
+}
+
 export default {
   recipes: recipes,
   planner: planner,
   ingredients: ingredients,
-  shoppinglists: shoppinglists
+  shoppinglists: shoppinglists,
+  currentRecipe: currentRecipe
 };

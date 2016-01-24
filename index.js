@@ -1,22 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { combineReducers } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { routeReducer } from 'redux-simple-router'
+import { syncHistory } from 'redux-simple-router'
+import thunk from 'redux-thunk';
 import App from './containers/App';
 import Recipes from './containers/Recipes';
 import ShoppingLists from './containers/ShoppingLists';
 import Planner from './containers/Planner';
-import Recipe from './components/Recipe';
+import Recipe from './containers/Recipe';
 import Start from './components/Start';
-import configureStore from './store/configureStore';
 import reducers from './reducers';
 import './global.css';
 
 const reducer = combineReducers(Object.assign({}, reducers, {
   routing: routeReducer
 }));
+
+const reduxRouterMiddleware = syncHistory(browserHistory);
+const createStoreWithMiddleware = applyMiddleware(
+  reduxRouterMiddleware,
+  thunk
+)(createStore)
+
+function configureStore(rootReducer) {
+  const store = createStoreWithMiddleware(rootReducer);
+  reduxRouterMiddleware.listenForReplays(store);
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', () => {
+      const nextReducer = require('./reducers');
+      store.replaceReducer(nextReducer);
+    });
+  }
+
+  return store;
+}
 
 const store = configureStore(reducer);
 
