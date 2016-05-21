@@ -32,6 +32,7 @@ class Recipe extends Component {
         <div>
           { recipe.title }
           <IngredientsList ingredients={recipe.ingredients} />
+          <button>Add ingredient</button>
         </div>;
     } else {
       content = <div>Loading...</div>;

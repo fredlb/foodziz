@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import IngredientsRecipeItem from './IngredientRecipeItem.js';
 
 class IngredientsList extends Component {
   render() {
@@ -6,15 +7,16 @@ class IngredientsList extends Component {
     return (
       <ul>
         {
-          ingredients.map( (ing) => 
-            <li> { ing.name } </li>
+        ingredients.map( (ing) => (
+          <li key={ing.ingredientId}><IngredientsRecipeItem ingredient={ing}/> </li>
+          )
         )}
       </ul>
     );
   }
 }
 
-IngredientsList.propTypes = {
+IngredientsList.PropTypes = {
   ingredients: PropTypes.array.isRequired
 };
 

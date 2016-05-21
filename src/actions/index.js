@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 export const CREATE_SHOPPINGLIST = "CREATE_SHOPPINGLIST";
 export const FETCH_RECIPE = "FETCH_RECIPE";
 
@@ -23,7 +22,7 @@ export function createShoppingList() {
       }
       return ingredients;
     }, {});
-    return dispatch(test(_.values(uniqIngredients)));
+    //return dispatch(test(_.values(uniqIngredients)));
   }
 }
 

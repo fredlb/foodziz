@@ -5,7 +5,7 @@ import menuStyles from './Menu.css';
 const { Link } = require('react-router');
 
 const Menu = () => (
-    <ul styleName="appMenu">
+    <ul className={menuStyles.appMenu}>
       <li><Link to="start">Start</Link></li>
       <li><Link to="recipes">Recipes</Link></li>
       <li><Link to="planner">Planner</Link></li>
@@ -13,4 +13,4 @@ const Menu = () => (
     </ul>
 );
 
-export default CSSModules(Menu, menuStyles);
+export default Menu;

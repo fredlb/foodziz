@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { CREATE_SHOPPINGLIST, FETCH_RECIPE } from '../actions';
 
 const initRecipes = {
@@ -139,7 +140,8 @@ function ingredients(state = initIngredients, action) {
 function shoppinglists(state = initShoppingList, action) {
   switch(action.type) {
     case CREATE_SHOPPINGLIST:
-      return {...state,ing:  Object.assign([], action.ing)};
+      return {};
+      //return {...state,ing:  Object.assign([], action.ing)};
     default:
       return state;
   }
@@ -154,10 +156,10 @@ function currentRecipe(state = {}, action) {
   }
 }
 
-export default {
-  recipes: recipes,
-  planner: planner,
-  ingredients: ingredients,
-  shoppinglists: shoppinglists,
-  currentRecipe: currentRecipe
-};
+export default combineReducers({
+  recipes,
+  planner,
+  ingredients,
+  shoppinglists,
+  currentRecipe
+});

@@ -7,12 +7,12 @@ class App extends Component {
   render() {
     const { children } = this.props;
     return (
-        <div styleName="container">
-          <nav styleName="menu"><Menu/></nav>
-          <div styleName="content">{children}</div>
+        <div className={cssStyles.container}>
+          <nav className={cssStyles.menu}><Menu/></nav>
+          <div className={cssStyles.content}>{children}</div>
         </div>
     );
   }
 }
 
-export default CSSModules(App, cssStyles);
+export default App;
